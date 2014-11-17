@@ -11,6 +11,12 @@
     "url": "https://github.com/LizaHCarter/hapi-to-do"
   },
   "author": "Liza Carter <lizahcarter@gmail.com>",
+  "contributors": [
+    "Nathan Vasquez <nathan.superartie@gmail.com>",
+    "Adam Barnhard <admbarn@gmail.com>",
+    "Kayla Jones <kaylalyne424@gmail.com>",
+    "Logan Richardson <g.logan.richardson@gmail.com>"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LizaHCarter/hapi-to-do/issues"
