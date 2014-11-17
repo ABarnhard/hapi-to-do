@@ -21,6 +21,20 @@ module.exports = function(server){
             method: 'GET',
             path: '/priorities',
             handler: priorities.index
+        },
+        {
+            method: 'POST',
+            path: '/priorities',
+            handler: priorities.new,
+            config: {
+                validate: {
+                    payload: {
+                        level: Joi.number().required().min(0),
+                        name: Joi.string().required().min(3),
+                        color: Joi.string().required()
+                    }
+                }
+            }
         }
     ];
 

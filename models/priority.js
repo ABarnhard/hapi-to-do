@@ -9,14 +9,4 @@ var PrioritySchema = new Schema({
     color: String
 });
 
-function createPriority(){
-    return Priority.mongoose.model('Priority', PrioritySchema);
-}
-
-function Priority(){}
-
-Object.defineProperty(Priority, 'mongoose', {
-    get: function(){return global.mongoose;}
-});
-
-module.exports = createPriority;
+module.exports = mongoose.model('Priority', PrioritySchema);
