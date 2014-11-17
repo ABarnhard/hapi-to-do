@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 var TaskSchema = new Schema({
     name: String,
     due: Date,
-    priority: Schema.Types.ObjectId,
+    priority: {type: Schema.Types.ObjectId, ref: 'Priority'},
     created: {type: Date, default: Date.now},
     isComplete: {type: Boolean, default: false}
 });

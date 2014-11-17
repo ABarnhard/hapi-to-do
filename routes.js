@@ -49,6 +49,11 @@ module.exports = function(server){
                     }
                 }
             }
+        },
+        {
+            method: 'GET',
+            path: '/tasks',
+            handler: tasks.index
         }
     ];
 
