@@ -3,7 +3,7 @@
 var Priority = require('../models/priority');
 
 exports.index = function(request, reply){
-    Priority.all(function(err, priorities){
+    Priority.find(function(err, priorities){
         reply(priorities);
     });
 };

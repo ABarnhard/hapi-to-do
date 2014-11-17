@@ -6,10 +6,12 @@ var port    = process.env.PORT,
 
 
 require('./routes')(server);
-
-require('./plugins')(server, function(){
-    server.start(function () {
-        server.log('info', 'Server running at: ' + server.info.uri);
+require('./mongoose')(function(){
+    require('./plugins')(server, function(){
+        server.start(function () {
+            server.log('info', 'Server running at: ' + server.info.uri);
+        });
     });
 });
+
 

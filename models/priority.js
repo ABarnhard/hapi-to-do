@@ -1,8 +1,22 @@
 'use strict';
 
-function Priority(obj){
+var mongoose = require('mongoose'),
+    Schema   = mongoose.Schema;
 
+var PrioritySchema = new Schema({
+    level: Number,
+    name: String,
+    color: String
+});
+
+function createPriority(){
+    return Priority.mongoose.model('Priority', PrioritySchema);
 }
 
+function Priority(){}
 
-module.exports = Priority;
+Object.defineProperty(Priority, 'mongoose', {
+    get: function(){return global.mongoose;}
+});
+
+module.exports = createPriority;
