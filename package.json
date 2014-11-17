@@ -1,0 +1,27 @@
+{
+  "name": "hapi-to-do",
+  "version": "1.0.0",
+  "description": "Task organizer app using Hapi, Mongoose, Lout, and Joi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LizaHCarter/hapi-to-do"
+  },
+  "author": "Liza Carter <lizahcarter@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LizaHCarter/hapi-to-do/issues"
+  },
+  "homepage": "https://github.com/LizaHCarter/hapi-to-do",
+  "dependencies": {
+    "good": "^4.0.0",
+    "good-console": "^2.0.1",
+    "hapi": "^7.5.2",
+    "joi": "^4.9.0",
+    "lout": "^5.1.2",
+    "mongoose": "^3.8.19"
+  }
+}
