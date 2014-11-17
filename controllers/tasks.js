@@ -14,3 +14,9 @@ exports.new = function(request, reply){
         reply(t);
     });
 };
+
+exports.delete = function(request, reply){
+    Task.remove({_id:request.id}, function(err){
+        reply('Task Deleted');
+    });
+};

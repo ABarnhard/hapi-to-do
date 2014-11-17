@@ -54,6 +54,11 @@ module.exports = function(server){
             method: 'GET',
             path: '/tasks',
             handler: tasks.index
+        },
+        {
+            method: 'DELETE',
+            path: '/tasks/{id}',
+            handler: tasks.delete
         }
     ];
 
