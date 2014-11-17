@@ -11,6 +11,18 @@ module.exports = function(grunt){
                 tasks: ['build']
             }
         },
+
+        hapi: {
+            customOptions: {
+                options: {
+                    server: 'web',
+                    bases: {
+                        '/': '.'
+                    }
+                }
+            }
+        },
+
         // ---------------------------------------------------------------------- //
         jshint: {
             options: {jshintrc: '.jshintrc', reporter: require('jshint-stylish')},
@@ -90,6 +102,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-hapi');
 
     grunt.registerTask('deploy', ['clean', 'build', 'shell:bower']);
     grunt.registerTask('build', ['jshint:all', 'jscs', 'jade', 'less', 'copy:js', 'copy:assets', 'copy:favicon']);
