@@ -7,3 +7,10 @@ exports.index = function(request, reply){
         reply(tasks);
     });
 };
+
+exports.new = function(request, reply){
+    var t = new Task(request.payload);
+    t.save(function(){
+        reply(t);
+    });
+};

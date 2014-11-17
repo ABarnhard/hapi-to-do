@@ -35,6 +35,20 @@ module.exports = function(server){
                     }
                 }
             }
+        },
+        {
+            method: 'POST',
+            path: '/tasks',
+            handler: tasks.new,
+            config: {
+                validate: {
+                    payload: {
+                        name: Joi.string().required().min(3),
+                        due: Joi.date().required().min('now').format('YYYY/MM/DD'),
+                        priority: Joi.string().required().min(24)
+                    }
+                }
+            }
         }
     ];
 
