@@ -22,9 +22,9 @@ exports.delete = function(request, reply){
 };
 
 exports.show = function(request, reply){
-    Task.findById(request.params.id, function(err, t){
+    Task.findById(request.params.id).populate('priority').exec(function(err, t){
         reply(t);
-    })
+    });
 };
 
 exports.update = function(request, reply){
