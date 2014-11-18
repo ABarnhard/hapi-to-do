@@ -88,7 +88,7 @@ module.exports = function(server){
                     params: {
                         id: Joi.string().required().min(24).max(24)
                     },
-                    query: {
+                    payload: {
                         isComplete: Joi.boolean().required()
                     }
                 }

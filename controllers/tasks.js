@@ -29,7 +29,7 @@ exports.show = function(request, reply){
 
 exports.update = function(request, reply){
     Task.findById(request.params.id, function(err, t){
-        t.isComplete = request.params.isComplete;
+        t.isComplete = request.payload.isComplete;
         t.save(function(){
             reply(t);
         });
