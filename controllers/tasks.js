@@ -16,7 +16,22 @@ exports.new = function(request, reply){
 };
 
 exports.delete = function(request, reply){
-    Task.remove({_id:request.id}, function(err){
+    Task.remove({_id:request.params.id}, function(err){
         reply('Task Deleted');
     });
+};
+
+exports.show = function(request, reply){
+    Task.findById(request.params.id, function(err, t){
+        reply(t);
+    })
+};
+
+exports.update = function(request, reply){
+    Task.findById(request.params.id, function(err, t){
+        t.isComplete = request.params.isComplete;
+        t.save(function(){
+            reply(t);
+        });
+    })
 };

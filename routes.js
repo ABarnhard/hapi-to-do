@@ -45,7 +45,7 @@ module.exports = function(server){
                     payload: {
                         name: Joi.string().required().min(3),
                         due: Joi.date().required().min('now').format('YYYY/MM/DD'),
-                        priority: Joi.string().required().min(24)
+                        priority: Joi.string().required().min(24).max(24)
                     }
                 }
             }
@@ -58,7 +58,41 @@ module.exports = function(server){
         {
             method: 'DELETE',
             path: '/tasks/{id}',
-            handler: tasks.delete
+            handler: tasks.delete,
+            config: {
+                validate: {
+                    params: {
+                        id: Joi.string().required().min(24).max(24)
+                    }
+                }
+            }
+        },
+        {
+            method: 'GET',
+            path: '/tasks/{id}',
+            handler: tasks.show,
+            config: {
+                validate: {
+                    params: {
+                        id: Joi.string().required().min(24).max(24)
+                    }
+                }
+            }
+        },
+        {
+            method: 'PUT',
+            path: '/tasks/{id}',
+            handler: tasks.update,
+            config: {
+                validate: {
+                    params: {
+                        id: Joi.string().required().min(24).max(24)
+                    },
+                    query: {
+                        isComplete: Joi.boolean().required()
+                    }
+                }
+            }
         }
     ];
 
